@@ -1,3 +1,4 @@
+package GuiTests;
 import javax.swing.*;
 
 import java.awt.Dimension;

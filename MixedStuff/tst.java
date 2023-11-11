@@ -1,3 +1,4 @@
+package MixedStuff;
 import java.util.Scanner;
 
 public class tst {

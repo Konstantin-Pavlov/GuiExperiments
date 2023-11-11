@@ -1,14 +1,12 @@
-package tv;
+package TV;
 
 public class Television {
 
     private int currentChannel;
-
     private int maxChannels;
-
     private Channel[] channels;
 
-    public Television(int channel){
+    public Television(int channel) {
         this(channel, 3);
     }
 
@@ -19,26 +17,26 @@ public class Television {
         fillChannels();
     }
 
-    private void fillChannels(){
-        String[] channelNames = {"OPT", "PTP", "KTP", "MIR", "MTV", "TNT", "HTC", "TB3", "CTC", "HBT"};
+    private void fillChannels() {
+        String[] channelNames = { "OPT", "PTP", "KTP", "MIR", "MTV", "TNT", "HTC", "TB3", "CTC", "HBT" };
         for (int i = 0; i < maxChannels; i++) {
             channels[i] = new Channel(channelNames[i]);
         }
     }
 
-    public void nextChannel(){
+    public void nextChannel() {
         currentChannel = (currentChannel + 1) > maxChannels ? 1 : currentChannel + 1;
     }
 
-    public void prevChannel(){
+    public void prevChannel() {
         currentChannel = currentChannel - 1 == 0 ? maxChannels : currentChannel - 1;
     }
 
-    public void toChannel(int channel){
+    public void toChannel(int channel) {
         currentChannel = channel;
     }
 
-    public String printChannel(){
+    public String printChannel() {
         return String.format("<<<<<<<<<< %s >>>>>>>>>>%n%s%n", currentChannel, getChannelName(currentChannel));
     }
 

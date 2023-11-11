@@ -1,4 +1,4 @@
-package tv;
+package TV;
 
 public class Channel {
     private String name;
@@ -7,8 +7,7 @@ public class Channel {
         this.name = name;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
-
 }

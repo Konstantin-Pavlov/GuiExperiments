@@ -1,3 +1,4 @@
+package GuiTests;
 import javax.swing.*;
 
 public class TestGui extends JFrame {

@@ -1,3 +1,4 @@
+package GuiTests;
 import java.awt.FlowLayout; //верстка элементов в окне
 import java.awt.event.ActionListener; //прослушивает события - нажатие мышкой и тд
 import java.awt.event.ActionEvent; //реагирует на события которые прослушивает ActionListener (нажатие на конпку и тд)
