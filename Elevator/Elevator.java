@@ -20,10 +20,10 @@ public class Elevator {
 
     private void step(int toFloor) {
         printFloor();
-        if (currentFloor < toFloor){
+        if (currentFloor < toFloor) {
             currentFloor++;
         }
-        if (currentFloor > toFloor){
+        if (currentFloor > toFloor) {
             currentFloor--;
         }
     }

@@ -26,7 +26,7 @@ public class Application {
             print("Недопустимый этаж");
             return;
         }
-        print("Укажите перевозимый вес:");
+        print("Укажите перевозимый вес (до 200кг):");
         int weight = Integer.parseInt(askUser(sc));
 
         if (!elevator.isAllowableWeight(weight)) {
