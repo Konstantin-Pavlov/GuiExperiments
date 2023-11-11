@@ -1,13 +1,11 @@
 import javax.swing.*;
+
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
-import java.awt.event.MouseListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-
+import java.awt.event.MouseEvent;
 
 public class Gui extends JFrame {
     private JTextField timeField;
@@ -29,6 +27,8 @@ public class Gui extends JFrame {
         add(timeField);
         add(startButton);
         add(exitButton);
+
+        centerFrameOnScreen(this);
 
         startButton.addActionListener(new ActionListener() {
             @Override
@@ -53,16 +53,13 @@ public class Gui extends JFrame {
             }
         });
 
-        //doesn't work for some reason
-        // TODO - when click in JTextField, delete text in the JTextField
-/*         timeField.addMouseListener(new MouseAdapter() {
+        // when click in JTextField, delete text in the JTextField
+        timeField.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 timeField.setText("");
             }
-        }); */
-
-
+        });
 
         timer = new Timer(1000, new ActionListener() {
             @Override
@@ -91,14 +88,12 @@ public class Gui extends JFrame {
         }
     }
 
-    /*
-     * private static void centerFrameOnScreen(JFrame frame) {
-     * Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-     * int x = (screenSize.width - frame.getWidth()) / 2;
-     * int y = (screenSize.height - frame.getHeight()) / 2;
-     * frame.setLocation(x, y);
-     * }
-     */
+    private static void centerFrameOnScreen(JFrame frame) {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int x = (screenSize.width - frame.getWidth()) / 2;
+        int y = (screenSize.height - frame.getHeight()) / 2;
+        frame.setLocation(x, y);
+    }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
