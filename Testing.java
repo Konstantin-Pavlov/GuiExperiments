@@ -18,11 +18,12 @@ public class Testing {
 
         Scanner scanner = new Scanner(System.in);
         TreeMap<String, TreeSet<String>> names = new TreeMap<>();
-        String TEMPLATE = "%s дружит с : %s %n";
         while (scanner.hasNext()) {
             String[] line = scanner.nextLine().split(" ");
             String name1 = line[0];
             String name2 = line[1];
+
+            // to method?
             if (names.containsKey(name1)) {
                 names.get(name1).add(name2);
             } else {
