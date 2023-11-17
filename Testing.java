@@ -1,5 +1,17 @@
 import java.util.*;
+/*
+Mike Nike
+Oleg Petr
+Mike Petr
+Ivan Oleg
 
+Ivan дружит с : Oleg 
+Mike дружит с : Nike Petr 
+Nike дружит с : Mike 
+Oleg дружит с : Ivan Petr 
+Petr дружит с : Mike Oleg 
+ * 
+ */
 
 public class Testing {
     public static void main(String[] args) {
@@ -24,7 +36,9 @@ public class Testing {
             }
         }
         for (Map.Entry<String, TreeSet<String>> pair : names.entrySet()) {
-            System.out.println(pair.getKey() + " " + pair.getValue());
+            System.out.print(pair.getKey() + " дружит с : ");
+            pair.getValue().forEach(elemnt -> System.out.print(elemnt + " "));
+            System.out.println();
         }
 
         scanner.close();
