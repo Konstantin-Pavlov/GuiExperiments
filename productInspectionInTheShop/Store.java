@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.Random;
 
 public class Store {
+
+    // todo icebox and chowcase
     Product[] products = new Product[20];
 
     public void fillingTheStoreWithGoods() {

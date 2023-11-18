@@ -1,6 +1,9 @@
 package PaymentMethodsTask;
 
+import java.math.BigDecimal;
+
 public abstract class PaymentMethods {
+    // ude BigDecimal instead of double
     private double balance;
 
     public PaymentMethods(int balance) {
@@ -16,7 +19,4 @@ public abstract class PaymentMethods {
     public void setBalance(double balance) {
         this.balance = balance;
     }
-
-    
-
 }
