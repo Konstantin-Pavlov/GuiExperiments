@@ -2,13 +2,10 @@ package productInspectionInTheShop;
 
 import java.time.LocalDate;
 
-public class Milk extends Product {
+public class Fish extends Product {
 
-    public Milk(String title, int productExpirationDate, LocalDate producedOn, StoragePlace place) {
+    public Fish(String title, int productExpirationDate, LocalDate producedOn, StoragePlace place) {
         super(title, productExpirationDate, producedOn, place);
     }
-
-
-
 
 }

@@ -1,7 +1,6 @@
 package productInspectionInTheShop;
 
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 
 public class ProductExpirationExample {
     public static void main(String[] args) {
@@ -26,4 +25,3 @@ public class ProductExpirationExample {
         }
     }
 }
-
