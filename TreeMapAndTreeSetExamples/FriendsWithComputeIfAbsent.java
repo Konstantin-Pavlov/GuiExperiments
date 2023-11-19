@@ -27,46 +27,49 @@ Petr дружит с : Mike Oleg
  * 
  */
 
-public class Friends {
+public class FriendsWithComputeIfAbsent {
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
         TreeMap<String, TreeSet<String>> names = new TreeMap<>();
         while (scanner.hasNext()) {
             String[] line = scanner.nextLine().split(" ");
             String name1 = line[0];
             String name2 = line[1];
-
             namesListUpdate(name1, name2, names);
-
         }
         for (Map.Entry<String, TreeSet<String>> pair : names.entrySet()) {
             System.out.print(pair.getKey() + " дружит с : ");
             pair.getValue().forEach(elemnt -> System.out.print(elemnt + " "));
             System.out.println();
         }
-
         scanner.close();
     }
 
     private static void namesListUpdate(String name1, String name2, TreeMap<String, TreeSet<String>> names) {
+        // old version
+        // using containsKey
         // if (names.containsKey(name1)) {
-        //     names.get(name1).add(name2);
+        // names.get(name1).add(name2);
         // } else {
-        //     names.put(name1, new TreeSet<>(Collections.singletonList(name2)));
+        // names.put(name1, new TreeSet<>(Collections.singletonList(name2)));
         // }
-        // int value1 = map.computeIfAbsent("key1", k -> 20); // Key already present, returns 10
-        // int value2 = map.computeIfAbsent("key2", k -> 30); // Key not present, computes value as 30
 
+        // if (names.containsKey(name2)) {
+        // names.get(name2).add(name1);
+        // } else {
+        // names.put(name2, new TreeSet<>(Collections.singletonList(name1)));
+        // }
+
+        // example
+        // int value1 = map.computeIfAbsent("key1", k -> 20); // Key already present,
+        // returns 10
+        // int value2 = map.computeIfAbsent("key2", k -> 30); // Key not present,
+        // computes value as 30
+
+        // using computeIfAbsent
         names.computeIfAbsent(name1, k -> new TreeSet<>(Collections.singletonList(name2))).add(name2);
         names.computeIfAbsent(name2, k -> new TreeSet<>(Collections.singletonList(name1))).add(name1);
 
-
-        // if (names.containsKey(name2)) {
-        //     names.get(name2).add(name1);
-        // } else {
-        //     names.put(name2, new TreeSet<>(Collections.singletonList(name1)));
-        // }
     }
 
 }
