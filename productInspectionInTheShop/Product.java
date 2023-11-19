@@ -40,8 +40,8 @@ public abstract class Product {
         return title;
     }
 
-    public StoragePlace getPlace() {
-        return place;
+    public String getPlace() {
+        return place.getPlace();
     }
 
     
