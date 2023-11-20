@@ -1,35 +1,35 @@
 package productInspectionInTheShop;
 
 import java.time.LocalDate;
+import java.util.Random;
 
 public abstract class Product {
+
     private String title;
-    private int productExpirationDate; // days
-    private LocalDate producedOn; // дата когда продукт был произведен
+    private int productExpirationDate;
+    private final LocalDate producedOn;
+
     private StoragePlace place;
 
-    public Product(String title, int productExpirationDate, LocalDate producedOn, StoragePlace place) {
+    public Product(String title, int productExpirationDate, LocalDate producedOn) {
         this.title = title;
         this.productExpirationDate = productExpirationDate;
         this.producedOn = producedOn;
-        this.place = place;
     }
 
-    public boolean isFresh() {
-        // Get date of production
-        LocalDate productionDate = getProducedOn();
+    public abstract boolean isFresh();
 
-        // Get the current date
-        LocalDate currentDate = LocalDate.now();
-
-        // Calculate the expiration date
-        LocalDate expirationDate = productionDate.plusDays(getProductExpirationDate());
-
-        return currentDate.isBefore(expirationDate);
+    public void placeProductTo() {
+        Random random = new Random();
+        if (random.nextBoolean()) {
+            setPlace(StoragePlace.ICEBOX);
+        } else {
+            setPlace(StoragePlace.SHOWCASE);
+        }
     }
 
-    public int getProductExpirationDate() {
-        return productExpirationDate;
+    public String getProductExpirationDate() {
+        return String.valueOf(productExpirationDate);
     }
 
     public LocalDate getProducedOn() {
@@ -44,6 +44,8 @@ public abstract class Product {
         return place.getPlace();
     }
 
-    
+    private void setPlace(StoragePlace place) {
+        this.place = place;
+    }
 
 }

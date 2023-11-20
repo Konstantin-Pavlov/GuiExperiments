@@ -6,6 +6,7 @@ public class Cash extends PaymentMethods {
     }
 
     public boolean pay(double amount) {
+        System.out.println("оплата наличными");
         return amount <= super.getBalance();
     }
 }

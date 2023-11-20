@@ -10,6 +10,7 @@ public class BankCard extends PaymentMethods {
 
     @Override
     public boolean pay(double amount) {
+        System.out.println("оплата банковской картой");
         return amount <= super.getBalance() + this.limit;
     }
 }

@@ -2,8 +2,7 @@ package productInspectionInTheShop;
 
 public enum StoragePlace {
     ICEBOX("Icebox"), SHOWCASE("Showcase");
-
-    private String place;
+    private final String place;
 
     StoragePlace(String place) {
         this.place = place;
@@ -12,6 +11,4 @@ public enum StoragePlace {
     public String getPlace() {
         return place;
     }
-
-    
 }

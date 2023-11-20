@@ -10,6 +10,7 @@ public class CreditCard extends PaymentMethods {
 
     @Override
     public boolean pay(double amount) {
+        System.out.println("оплата кредитной картой");
         boolean succes = true;
         double curBalance = super.getBalance();
         if(amount <= curBalance){
