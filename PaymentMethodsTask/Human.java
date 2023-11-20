@@ -20,7 +20,8 @@ public class Human {
 
     public boolean buyProduct(double price) {
         int choosingPaymentMethod = this.random.nextInt(2);
-        return this.paymentMethods[1].pay(price);
+        // return this.paymentMethods[1].pay(price);
+        return this.paymentMethods[0].pay(price);
     }
 
     public double getCreditCardBalance(){

@@ -6,7 +6,19 @@ public class Cash extends PaymentMethods {
     }
 
     public boolean pay(double amount) {
+        double curBalance = super.getBalance();
+        boolean possibleToPay = amount <= curBalance;
         System.out.println("оплата наличными");
-        return amount <= super.getBalance();
+        System.out.println("Средсва: " + curBalance);
+
+        if (possibleToPay) {
+            super.setBalance(curBalance - amount);
+            System.out.println("заплачено: " + amount);
+            System.out.println("Осталось: " + super.getBalance());
+        } else {
+            System.out.println("не хватает средств");
+        }
+        return possibleToPay;
+    
     }
 }

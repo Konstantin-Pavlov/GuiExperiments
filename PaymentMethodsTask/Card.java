@@ -17,6 +17,4 @@ public abstract class Card extends PaymentMethods {
         this.limit = limit;
     }
 
-    
-
 }
