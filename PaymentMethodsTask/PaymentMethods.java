@@ -19,7 +19,6 @@ public abstract class PaymentMethods {
 
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
-        // to do - округлить до 2 знаков
         // import java.text.DecimalFormat;
         // double number = 123.4567;
         // DecimalFormat decimalFormat = new DecimalFormat("#.##");

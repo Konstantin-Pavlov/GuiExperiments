@@ -10,8 +10,6 @@ public class Cash extends PaymentMethods {
     public boolean pay(BigDecimal amount) {
         System.out.println("оплата наличными");
         BigDecimal curBalance = super.getBalance();
-
-        // compareTo Returns: -1, 0, or 1 as this BigDecimal is numerically less than, equal to, or greater than val
         boolean possibleToPay = amount.compareTo(curBalance) <= 0; // amount <= curBalance;
         System.out.println("Средсва: " + curBalance);
 
