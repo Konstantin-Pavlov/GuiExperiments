@@ -1,22 +1,35 @@
 package PaymentMethodsTask;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 public abstract class PaymentMethods {
     // ude BigDecimal instead of double
-    private double balance;
+    private DecimalFormat decimalFormat = new DecimalFormat("#.##");
+    private BigDecimal balance;
 
-    public PaymentMethods(int balance) {
+    public PaymentMethods(BigDecimal balance) {
         setBalance(balance);
     }
 
-    public abstract boolean pay(double amount);
+    public abstract boolean pay(BigDecimal amount);
 
-    public double getBalance() {
+    public BigDecimal getBalance() {
         return balance;
     }
 
-    public void setBalance(double balance) {
+    public void setBalance(BigDecimal balance) {
         this.balance = balance;
+        // to do - округлить до 2 знаков
+        // import java.text.DecimalFormat;
+        // double number = 123.4567;
+        // DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        // String roundedNumber = decimalFormat.format(number);
     }
+
+    public DecimalFormat getDecimalFormat() {
+        return decimalFormat;
+    }
+
+    
 }

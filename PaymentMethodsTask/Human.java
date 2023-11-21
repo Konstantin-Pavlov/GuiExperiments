@@ -1,11 +1,13 @@
 package PaymentMethodsTask;
 
+import java.math.BigDecimal;
 import java.util.Random;
 
 public class Human {
     private double money;
     private Random random = new Random();
-    PaymentMethods[] paymentMethods = { new Cash(5000), new CreditCard(10000), new BankCard(7000) };
+    PaymentMethods[] paymentMethods = { new Cash(BigDecimal.valueOf(5000)), 
+        new CreditCard(BigDecimal.valueOf(10000)), new BankCard(BigDecimal.valueOf(7000)) };
 
     public Human(double money) {
         this.money = money;
@@ -18,17 +20,17 @@ public class Human {
         return money;
     }
 
-    public boolean buyProduct(double price) {
+    public boolean buyProduct(BigDecimal price) {
         int choosingPaymentMethod = this.random.nextInt(2);
         // return this.paymentMethods[1].pay(price);
         return this.paymentMethods[0].pay(price);
     }
 
-    public double getCreditCardBalance(){
+    public BigDecimal getCreditCardBalance(){
         return paymentMethods[1].getBalance();
     }
 
-    public int getCreditCardLimit(){
+    public BigDecimal getCreditCardLimit(){
         // to use getLimit() method need to cast to CreditCard
         // CreditCard card = (CreditCard) paymentMethods[1];
         // return card.getLimit();

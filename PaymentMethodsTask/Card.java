@@ -1,19 +1,21 @@
 package PaymentMethodsTask;
 
+import java.math.BigDecimal;
+
 public abstract class Card extends PaymentMethods {
 
-    private int limit;
+    private BigDecimal limit;
 
-    public Card(int balance) {
+    public Card(BigDecimal balance) {
         super(balance);
-        this.limit = 10000; // by default
+        this.limit.valueOf(10000); // by default
     }
 
-    public int getLimit() {
+    public BigDecimal getLimit() {
         return limit;
     }
 
-    public void setLimit(int limit) {
+    public void setLimit(BigDecimal limit) {
         this.limit = limit;
     }
 
