@@ -7,7 +7,7 @@ public abstract class PaymentMethods {
     private DecimalFormat decimalFormat = new DecimalFormat("#.##");
     private BigDecimal balance;
 
-    public PaymentMethods(BigDecimal balance) {
+    protected PaymentMethods(BigDecimal balance) {
         setBalance(balance);
     }
 
