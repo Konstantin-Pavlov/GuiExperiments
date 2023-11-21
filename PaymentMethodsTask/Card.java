@@ -6,12 +6,16 @@ public abstract class Card extends PaymentMethods {
 
     private BigDecimal limit;
 
-    public Card(BigDecimal balance) {
+    protected Card(BigDecimal balance) {
         super(balance);
     }
 
     public BigDecimal getLimit() {
-        return limit;
+        return this.limit;
+    }
+
+    public String getLimitInDecimalFormat() {
+        return super.getBalanceInDecimalFormat(this.limit);
     }
 
     public void setLimit(BigDecimal limit) {

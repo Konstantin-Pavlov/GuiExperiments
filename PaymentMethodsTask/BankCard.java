@@ -13,12 +13,11 @@ public class BankCard extends Card {
     public boolean pay(BigDecimal amount) {
         System.out.println("оплата банковской картой");
         // compareTo Returns: -1, 0, or 1 as this BigDecimal is numerically less than, equal to, or greater than val
-        System.out.println("оплата кредитной картой");
         boolean succes = true;
         BigDecimal curBalance = super.getBalance();
 
         if (amount.compareTo(curBalance) <= 0) {
-            System.out.println("С вашей кредитки списано " + amount);
+            System.out.println("С вашей кредитки списано " + super.getBalanceInDecimalFormat(amount));
             super.setBalance(curBalance.subtract(amount));
 
         } else if (amount.compareTo(curBalance.add(super.getLimit())) <= 0) {

@@ -22,7 +22,7 @@ public class Human {
     }
 
     public void buyProduct(BigDecimal price) {
-        
+
         System.out.println("цена покупки: " + new DecimalFormat("#.##").format(price));
         int choosingPaymentMethod = this.random.nextInt(3);
         if (this.paymentMethods[choosingPaymentMethod].pay(price)) {
@@ -32,29 +32,29 @@ public class Human {
         }
     }
 
-    public BigDecimal getCreditCardBalance() {
-        return paymentMethods[1].getBalance();
+    public String getCreditCardBalance() {
+        return paymentMethods[1].getBalanceInDecimalFormat(paymentMethods[1].getBalance());
     }
 
-    public BigDecimal getBankCardBalance() {
-        return paymentMethods[2].getBalance();
+    public String getBankCardBalance() {
+        return paymentMethods[1].getBalanceInDecimalFormat(paymentMethods[2].getBalance());
     }
 
-    public BigDecimal getCashBalance() {
-        return paymentMethods[0].getBalance();
+    public String getCashBalance() {
+        return paymentMethods[1].getBalanceInDecimalFormat(paymentMethods[0].getBalance());
     }
 
-    public BigDecimal getCreditCardLimit() {
+    public String getCreditCardLimit() {
         // to use getLimit() method need to cast to CreditCard
         // CreditCard card = (CreditCard) paymentMethods[1];
         // return card.getLimit();
 
         // another way in one line
-        return ((Card) paymentMethods[1]).getLimit();
+        return ((Card) paymentMethods[1]).getLimitInDecimalFormat();
     }
 
-    public BigDecimal getBankCardLimit() {
-        return ((Card) paymentMethods[2]).getLimit();
+    public String getBankCardLimit() {
+        return ((Card) paymentMethods[2]).getLimitInDecimalFormat();
     }
 
 }

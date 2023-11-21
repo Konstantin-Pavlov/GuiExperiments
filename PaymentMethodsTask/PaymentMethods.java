@@ -26,9 +26,8 @@ public abstract class PaymentMethods {
         // String roundedNumber = decimalFormat.format(number);
     }
 
-    public DecimalFormat getDecimalFormat() {
-        return decimalFormat;
+    public String getBalanceInDecimalFormat(BigDecimal price) {
+        return decimalFormat.format(price);
     }
 
-    
 }

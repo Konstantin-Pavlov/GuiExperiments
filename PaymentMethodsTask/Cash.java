@@ -17,8 +17,8 @@ public class Cash extends PaymentMethods {
 
         if (possibleToPay) {
             super.setBalance(curBalance.subtract(amount));
-            System.out.println("заплачено: " + amount);
-            System.out.println("Осталось: " + super.getDecimalFormat().format(super.getBalance()));
+            System.out.println("заплачено: " + super.getBalanceInDecimalFormat(amount));
+            System.out.println("Осталось: " + super.getBalanceInDecimalFormat(super.getBalance()));
         } else {
             System.out.println("не хватает средств");
         }
