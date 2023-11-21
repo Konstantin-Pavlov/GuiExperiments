@@ -30,6 +30,14 @@ public class Human {
         return paymentMethods[1].getBalance();
     }
 
+    public BigDecimal getBankCardBalance(){
+        return paymentMethods[2].getBalance();
+    }
+
+    public BigDecimal getCashBalance(){
+        return paymentMethods[0].getBalance();
+    }
+
     public BigDecimal getCreditCardLimit(){
         // to use getLimit() method need to cast to CreditCard
         // CreditCard card = (CreditCard) paymentMethods[1];
@@ -37,6 +45,10 @@ public class Human {
 
         // another way in one line
         return ((CreditCard) paymentMethods[1]).getLimit();
+    }
+
+    public BigDecimal getBankCardLimit(){
+        return ((BankCard) paymentMethods[2]).getLimit();
     }
 
 }

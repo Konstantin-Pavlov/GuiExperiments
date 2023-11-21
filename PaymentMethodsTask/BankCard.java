@@ -35,4 +35,8 @@ public class BankCard extends PaymentMethods {
         return succes;
          
     }
+
+    public BigDecimal getLimit() {
+        return this.limit;
+    }
 }

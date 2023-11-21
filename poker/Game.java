@@ -4,21 +4,24 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Game {
-   public static Random random = new Random();
+    public static Random random = new Random();
+
     public static void main(String[] args) {
 
         String[] ranks = new String[13];
-        Suit[] suits = new Suit[]{Suit.HEARTS, Suit.PIKES, Suit.CLOVES, Suit.TILES};
+        Suit[] suits = new Suit[] { Suit.HEARTS, Suit.PIKES, Suit.CLOVES, Suit.TILES };
 
         fillingTheRanksArray(ranks);
         Card card1 = getRandomCard(ranks, suits);
         System.out.println(card1);
     }
-    private static Card getRandomCard(String[] ranks, Suit[] suits){
+
+    private static Card getRandomCard(String[] ranks, Suit[] suits) {
         int rankChoice = random.nextInt(13);
         int suitChoice = random.nextInt(4);
         return new Card(suits[suitChoice], ranks[rankChoice]);
     }
+
     private static void fillingTheRanksArray(String[] ranks) {
         for (int i = 0; i < ranks.length; i++) {
             int choice = random.nextInt(13);
