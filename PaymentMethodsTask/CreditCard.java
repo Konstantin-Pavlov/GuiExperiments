@@ -7,7 +7,7 @@ public class CreditCard extends PaymentMethods {
 
     public CreditCard(BigDecimal balance) {
         super(balance);
-        this.limit.valueOf(10000);
+        limit = BigDecimal.valueOf(10000);
     }
 
     @Override
@@ -25,7 +25,7 @@ public class CreditCard extends PaymentMethods {
         else if (amount.compareTo(curBalance.add(this.limit)) <= 0){;
             System.out.println("средств кредитки не хватило, с лимита списано " + (curBalance.subtract(amount)).abs());
             super.setBalance(BigDecimal.valueOf(0));
-            this.limit.subtract((curBalance.subtract(amount)).abs());
+            limit = this.limit.subtract((curBalance.subtract(amount)).abs());
         }
         else {
             System.out.println("не хватает средств кредитки и лимита чтобы оплатить");
