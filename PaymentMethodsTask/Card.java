@@ -8,7 +8,6 @@ public abstract class Card extends PaymentMethods {
 
     public Card(BigDecimal balance) {
         super(balance);
-        this.limit.valueOf(10000); // by default
     }
 
     public BigDecimal getLimit() {

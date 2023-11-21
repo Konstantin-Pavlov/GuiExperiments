@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
 public abstract class PaymentMethods {
-    // ude BigDecimal instead of double
     private DecimalFormat decimalFormat = new DecimalFormat("#.##");
     private BigDecimal balance;
 
