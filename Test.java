@@ -1,6 +1,6 @@
 public class Test {
     public static void main(String[] args) {
-
+        System.out.println(reverse(123456));
     }
 
     private static int reverse(int x) {
