@@ -1,6 +1,14 @@
+import java.util.stream.Stream;
+
 public class Test {
     public static void main(String[] args) {
-        System.out.println(reverse(123456));
+        // System.out.println(reverse(123456));
+        Cat[] cats = Stream.generate(Cat::new).limit(5).toArray(Cat[]::new);
+
+        Stream.of(cats).forEach(System.out::println);
+        int n = 2;
+       
+
     }
 
     private static int reverse(int x) {
@@ -21,4 +29,9 @@ public class Test {
         java.util.Arrays.sort(a);
     }
 
+}
+
+class Cat {
+    String name;
+    int age, weight;
 }
